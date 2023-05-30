@@ -22,8 +22,5 @@ func (s *Stack) Pop() any {
 	return res
 }
 func (s *Stack) IsEmpty() bool {
-	if s.Len() == 0 {
-		return true
-	}
-	return false
+	return s.Len() == 0
 }
