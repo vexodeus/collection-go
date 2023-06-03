@@ -16,8 +16,8 @@ func (q *Queue) Peek() any {
 	}
 	return q.Slice[0]
 }
-func (q *Queue) Enqueue(value any) {
-	q.Slice = append(q.Slice, value)
+func (q *Queue) Enqueue(data any) {
+	q.Slice = append(q.Slice, data)
 }
 func (q *Queue) Dequeue() any {
 	if q.IsEmpty() {

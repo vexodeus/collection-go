@@ -10,14 +10,14 @@ func NewQueue[T any]() *Queue[T] {
 func (q *Queue[T]) Len() int {
 	return len(q.Slice)
 }
-func (q *Queue[T]) Peek() any {
+func (q *Queue[T]) Peek() T {
 	if q.IsEmpty() {
-		return nil
+		return *new(T)
 	}
 	return q.Slice[0]
 }
-func (q *Queue[T]) Enqueue(value T) {
-	q.Slice = append(q.Slice, value)
+func (q *Queue[T]) Enqueue(data T) {
+	q.Slice = append(q.Slice, data)
 }
 func (q *Queue[T]) Dequeue() T {
 	if q.IsEmpty() {
